@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko" data-m-nobr=".about__lead, .quote__text, .join__title">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국산업교육학회 — DEMO 3 사진 중심안</title>
+<meta name="description" content="1989년부터 산업계와 학계가 함께 일터의 배움을 연구해 온 한국산업교육학회 (리뉴얼 데모 3 · 사진 중심안)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@500;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../_assets/video/v_auditorium_poster.jpg">
+<link rel="stylesheet" href="../_lib/mobile.css?v=1">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- 커서 라벨 (VIEW / DRAG) · 소식 썸네일 -->
+<div class="cur" id="cur" aria-hidden="true"><span></span></div>
+<div class="thumb" id="thumb" aria-hidden="true"><img alt=""></div>
+
+<!-- ================= 헤더 : 메뉴명 + hover 만 (링크 없음) ================= -->
+<header class="hd" id="hd" data-theme="dark">
+  <div class="hd__logo">
+    <img src="../_assets/brand/emblem.svg" alt="" class="hd__mark">
+    <span class="hd__name">한국산업교육학회<em>The Korean Society for HRD</em></span>
+  </div>
+  <nav class="hd__nav" id="nav" aria-label="주 메뉴"></nav>
+  <div class="hd__side">
+    <span class="hd__login">로그인</span>
+    <span class="hd__join">입회안내</span>
+    <button class="hd__burger" data-mmenu aria-label="메뉴 열기"><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 1. 히어로 : 전면 영상 → 둥근 카드로 축소 (pin + scrub) ================= -->
+<section class="hero" id="hero" data-theme="dark">
+  <div class="hero__pin">
+
+    <div class="hero__next">
+      <p class="mono hero__next-label"><i class="dot"></i>FIELD FORUM · SINCE 2013</p>
+      <h2 class="serif hero__next-title">학회는 강의실에만<br>있지 않습니다</h2>
+      <p class="hero__next-desc">한국산업교육학회는 1989년부터 산업계와 학계가 함께 일터의 배움을 연구해 왔습니다. 2013년부터는 기업 연수원을 직접 찾아가, 그 회사의 인재육성 사례를 그 회사의 공간에서 듣습니다.</p>
+      <ul class="hero__next-meta mono">
+        <li><b>22</b>현장포럼</li>
+        <li><b>37</b>년의 연구</li>
+        <li><b>46</b>권의 학술지</li>
+      </ul>
+    </div>
+
+    <div class="hero__media" id="heroMedia">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+        data-src="../_assets/video/v_auditorium.mp4" data-src-m="../_assets/video/v_auditorium_m.mp4"
+        data-poster="../_assets/video/v_auditorium_poster.jpg"></video>
+      <canvas class="hero__dust" id="heroDust" aria-hidden="true"></canvas>
+      <div class="hero__dim"></div>
+      <p class="hero__chip mono"><i class="dot"></i><span id="heroChip"></span></p>
+    </div>
+
+    <div class="hero__copy">
+      <p class="hero__label mono"><i class="dot"></i>NEXT · <span id="heroKind"></span></p>
+      <h1 class="hero__title">
+        <span class="line"><span>현장에서</span></span>
+        <span class="line"><span>배웁니다<em class="serif-en">Learning, in the field.</em></span></span>
+      </h1>
+      <dl class="hero__strip" id="heroStrip"></dl>
+    </div>
+
+    <div class="hero__scroll mono" aria-hidden="true"><i></i>SCROLL</div>
+  </div>
+</section>
+
+<!-- ================= 2. 영상 프레임 스크롤 (캔버스 scrub) ================= -->
+<section class="seq" id="seq" data-theme="dark">
+  <div class="seq__pin">
+    <canvas class="seq__canvas" id="seqCanvas"></canvas>
+    <div class="seq__fallback" id="seqFallback" aria-hidden="true">
+      <img src="../_assets/img/p_center_dusk.jpg" alt="">
+      <img src="../_assets/img/h2017_tour.jpg" alt="">
+      <img src="../_assets/img/p_hall.jpg" alt="">
+    </div>
+    <div class="seq__dim"></div>
+
+    <div class="seq__loading mono" id="seqLoading"><span>LOADING SEQUENCE</span><b id="seqPct">0%</b></div>
+
+    <div class="seq__cap" data-from="0.03" data-to="0.36" data-pos="lb">
+      <p class="mono">01 — WHERE</p>
+      <h2 class="seq__h">학회가 기업으로<br>갑니다</h2>
+      <p class="seq__p">산업교육 현장포럼은 호텔 연회장이 아니라 기업의 연수원에서 열립니다.</p>
+    </div>
+    <div class="seq__cap" data-from="0.40" data-to="0.66" data-pos="c">
+      <p class="mono">02 — HOW LONG</p>
+      <h2 class="seq__h"><em class="num">2013</em>년부터<br><em class="num">22</em>번</h2>
+      <p class="seq__p">LG CNS에서 시작해 NAVER, 삼성전자, SK텔레콤, LG전자, LS, 그리고 GS건설까지.</p>
+    </div>
+    <div class="seq__cap" data-from="0.70" data-to="1.2" data-pos="rb">
+      <p class="mono">03 — WHY</p>
+      <h2 class="seq__h">강의실 밖에서<br>배우는 HRD</h2>
+      <p class="seq__p">그 회사의 인재육성 사례를, 그 회사의 공간에서 듣고 토론합니다.</p>
+    </div>
+
+    <div class="seq__hud mono" aria-hidden="true">
+      <span>FRAME <b id="seqFrame">001</b> / <b id="seqTotal">145</b></span>
+      <div class="seq__bar"><i id="seqBar"></i></div>
+      <span>SCROLL TO WALK IN</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. 학회 소개 : 컬러 면 × 사진 분할 ================= -->
+<section class="about" id="about" data-theme="light">
+  <div class="about__split">
+    <div class="about__panel">
+      <p class="mono">ABOUT KSHRD · SINCE 1989</p>
+      <h2 class="serif about__lead split">산업계와 학계가<br>한 테이블에 앉는<br>학회입니다</h2>
+      <p class="about__intro reveal" id="aboutIntro"></p>
+      <span class="ulink reveal">학회소개 <i>→</i></span>
+    </div>
+    <div class="about__photo">
+      <div class="about__pattern" aria-hidden="true"></div>
+      <figure class="about__img about__img--a rv-img" data-speed="6">
+        <img src="../_assets/img/p_duo.jpg" srcset="../_assets/img/sm/p_duo.jpg 960w, ../_assets/img/p_duo.jpg 1920w" sizes="(max-width:767px) 90vw, 42vw" alt="연수원 복도를 걸으며 이야기하는 기업 임원과 대학 교수 (생성 이미지)" loading="lazy">
+      </figure>
+      <figure class="about__img about__img--b rv-img" data-speed="-10">
+        <img src="../_assets/img/sm/p_notes.jpg" alt="학술대회에서 메모하는 참가자들의 손 (생성 이미지)" loading="lazy">
+      </figure>
+      <p class="about__tag mono">산 · 학 · 관 · 연</p>
+    </div>
+  </div>
+
+  <div class="about__pv">
+    <article class="pv pv--a">
+      <p class="mono">OUR PURPOSE</p>
+      <p class="serif pv__t reveal" id="pvPurpose"></p>
+    </article>
+    <article class="pv pv--b">
+      <p class="mono">OUR WAY</p>
+      <p class="serif pv__t reveal" id="pvVision"></p>
+    </article>
+  </div>
+
+  <div class="stats">
+    <p class="mono stats__label">KSHRD IN NUMBERS</p>
+    <ul class="stats__list" id="stats"></ul>
+  </div>
+</section>
+
+<!-- ================= 4. 현장포럼 아카이브 : 사진 위에 뜬 패널 + 드래그 카드 ================= -->
+<section class="forums" id="forums" data-theme="dark">
+  <div class="forums__bg" aria-hidden="true"><img src="../_assets/img/p_campus_aerial.jpg" alt="" loading="lazy"></div>
+
+  <div class="panel forums__panel">
+    <div class="panel__intro">
+      <div>
+        <p class="mono">FIELD FORUM ARCHIVE · 2013 — 2026</p>
+        <h2 class="panel__title split">22번의 현장</h2>
+      </div>
+      <div class="panel__desc reveal">
+        <p>첫 포럼은 2013년 10월 LG CNS였습니다. 그 뒤로 회차마다 다른 기업을 찾아가 인재육성 사례를 들었고, 2024년부터는 해외학자포럼이 더해졌습니다.</p>
+        <div class="panel__ctrl">
+          <button class="rbtn" id="fPrev" aria-label="이전"><i>←</i></button>
+          <button class="rbtn" id="fNext" aria-label="다음"><i>→</i></button>
+          <span class="mono" id="fCount">01 / 22</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ftrack" id="fWrap" data-cur="DRAG">
+      <ol class="ftrack__row" id="forumTrack"></ol>
+    </div>
+    <div class="ftrack__bar"><i id="fBar"></i></div>
+    <p class="panel__note mono">※ 카드 사진은 시연용 생성 이미지이며 해당 기업의 실제 공간이 아닙니다.</p>
+  </div>
+
+  <figure class="forums__recap rv-img">
+    <img src="../_assets/img/p_workshop.jpg" srcset="../_assets/img/sm/p_workshop.jpg 960w, ../_assets/img/p_workshop.jpg 1920w" sizes="94vw" alt="연수원에서 토론하는 포럼 참가자들 (생성 이미지)" loading="lazy" data-speed="8">
+    <figcaption class="mono"><i class="dot"></i>사례 발표 뒤에는 늘 토론이 이어집니다</figcaption>
+  </figure>
+</section>
+
+<!-- ================= 5. 학술대회 · 행사 : 큰 사진 위 세션 카드 ================= -->
+<section class="conf" id="conf" data-theme="dark">
+  <div class="conf__hero">
+    <div class="conf__bg" aria-hidden="true"><img src="../_assets/img/p_hall.jpg" srcset="../_assets/img/sm/p_hall.jpg 960w, ../_assets/img/p_hall.jpg 1920w" sizes="100vw" alt="" loading="lazy"></div>
+    <div class="conf__head">
+      <p class="mono">CONFERENCE · 2026 SPRING THEME</p>
+      <h2 class="conf__title split" id="confTitle"></h2>
+      <p class="conf__sub reveal">1997년 ‘무한경쟁시대에 대비하는 인적자원 개발전략’부터 해마다, 그해 일터가 묻는 질문을 주제로 삼아 왔습니다.</p>
+    </div>
+  </div>
+
+  <div class="panel conf__panel">
+    <div class="conf__bar">
+      <h3 class="conf__h3">학술대회 · 포럼</h3>
+      <div class="chips" id="confFilter" role="tablist"></div>
+    </div>
+    <ul class="egrid" id="eventGrid"></ul>
+  </div>
+</section>
+
+<!-- ================= 6. 인용 + 영상 (괄호 도형) ================= -->
+<section class="quote" id="quote" data-theme="light">
+  <div class="quote__media rv-img">
+    <div class="quote__frame" style="background-image:url(../_assets/img/sm/p_workshop.jpg)">
+      <video id="quoteVideo" autoplay muted loop playsinline preload="none"
+        data-src="../_assets/video/v_workshop.mp4" data-src-m="../_assets/video/v_workshop_m.mp4"
+        data-poster="../_assets/video/v_workshop_poster.jpg"></video>
+    </div>
+    <svg class="quote__brace" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true">
+      <path pathLength="1" d="M4 4 C4 30 20 34 60 34 L250 34 C285 34 296 40 300 56 C304 40 315 34 350 34 L540 34 C580 34 596 30 596 4" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <p class="mono quote__cap">WORKSHOP · 토론의 장</p>
+  </div>
+  <blockquote class="quote__body">
+    <span class="quote__mark serif-en" aria-hidden="true">“</span>
+    <p class="serif quote__text split" id="quoteText"></p>
+    <footer class="mono quote__by" id="quoteBy"></footer>
+  </blockquote>
+</section>
+
+<!-- ================= 7. 학술지 「산업교육연구」 : 표지 3D 틸트 + 소식 ================= -->
+<section class="journal" id="journal" data-theme="light">
+  <div class="journal__cover" id="coverWrap">
+    <div class="cover" id="cover">
+      <i class="cover__page"></i><i class="cover__page"></i>
+      <div class="cover__face">
+        <img src="../_assets/img/p_cover.jpg" alt="산업교육연구 표지 시안 (생성 이미지)" loading="lazy">
+        <span class="cover__shine"></span>
+      </div>
+    </div>
+    <p class="mono journal__issn" id="journalIssn"></p>
+  </div>
+
+  <div class="journal__body">
+    <p class="mono">THE JOURNAL</p>
+    <h2 class="journal__title split">「산업교육연구」</h2>
+    <p class="serif-en journal__en" id="journalEn"></p>
+    <dl class="journal__meta" id="journalMeta"></dl>
+    <ul class="chips chips--line" id="journalFields"></ul>
+
+    <div class="news">
+      <div class="news__head"><h3>최근 소식</h3><span class="ulink">공지사항 <i>→</i></span></div>
+      <ul class="news__list" id="newsList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. 함께하는 기관 : 글자 타일 ================= -->
+<section class="partners" id="partners" data-theme="dark">
+  <div class="partners__head">
+    <p class="mono">MEMBERS &amp; INSTITUTIONS</p>
+    <h2 class="partners__title split">함께하는 기관</h2>
+    <p class="partners__desc reveal">인적자원개발 현장 전문가, 학계 인사, 관련 기관 전문가와 함께 주요 기업의 인재개발 조직이 참여하고 있습니다.</p>
+  </div>
+  <ul class="tiles" id="partnerGrid"></ul>
+</section>
+
+<!-- ================= 9. 입회 CTA ================= -->
+<section class="join" id="join" data-theme="dark">
+  <div class="join__bg" aria-hidden="true"><img src="../_assets/img/p_center_dusk.jpg" srcset="../_assets/img/sm/p_center_dusk.jpg 960w, ../_assets/img/p_center_dusk.jpg 1920w" sizes="100vw" alt="" loading="lazy"></div>
+  <div class="join__inner">
+    <p class="mono">MEMBERSHIP</p>
+    <h2 class="join__title split">함께 연구할 분을<br>기다립니다</h2>
+    <p class="join__desc reveal">인적자원개발을 전공했거나 현장에서 일하는 분이라면 누구나. 개인회원 · 임원 · 기관(단체)회원으로 참여할 수 있습니다.</p>
+    <div class="join__btns reveal">
+      <span class="btn btn--amber">입회안내 <i>→</i></span>
+      <span class="btn btn--ghost">행사안내 및 접수 <i>→</i></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= 푸터 ================= -->
+<footer class="ft" id="ft" data-theme="dark">
+  <div class="ft__top">
+    <div class="ft__col">
+      <p class="mono">학회사무국</p>
+      <p id="ftAddr"></p>
+      <p id="ftContact"></p>
+      <p id="ftReg"></p>
+    </div>
+    <div class="ft__col">
+      <p class="mono">학술지 투고</p>
+      <p>「산업교육연구」 편집위원회</p>
+      <p>연 3회 (6월 · 9월 · 12월) 발간</p>
+    </div>
+    <ul class="ft__menu" id="ftMenu"></ul>
+  </div>
+  <div class="ft__word" aria-hidden="true"><span>K</span><span>S</span><span>H</span><span>R</span><span>D</span></div>
+  <div class="ft__bot mono">
+    <span>© The Korean Society for Human Resource Development.</span>
+    <span>DEMO 3 · 사진 중심안 — 이미지·영상은 시연용 생성 소재입니다</span>
+  </div>
+</footer>
+
+<script src="../_lib/gsap.min.js"></script>
+<script src="../_lib/ScrollTrigger.min.js"></script>
+<script src="../_lib/lenis.min.js"></script>
+<script src="../_lib/three.min.js" defer></script>
+<script src="../_lib/data.js?v=1"></script>
+<script src="../_lib/mobile.js?v=1"></script>
+<script src="main.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+_assets/src/
+_analysis/
+_qa/
+_assets/video/*_strip.jpg
+_assets/video/posters_sheet.jpg
+_assets/contact_images.jpg
+.DS_Store
+Thumbs.db
+.omc/
+**/.omc/

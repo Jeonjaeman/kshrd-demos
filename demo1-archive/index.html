@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>한국산업교육학회 — KSHRD 37년 아카이브 (시안 1)</title>
+<meta name="description" content="1989년 창립 이후 37년, 일터의 배움을 물어온 한국산업교육학회의 기록.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap">
+<link rel="preload" as="image" href="../_assets/img/bg_light.jpg">
+<link rel="stylesheet" href="../_lib/mobile.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+<!-- ===== 헤더 : 메뉴는 이름과 hover 표시만 (링크 없음) ===== -->
+<header class="hd" data-theme="light">
+  <div class="hd__in">
+    <span class="hd__logo" aria-label="한국산업교육학회">
+      <svg class="hd__mark" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="6"/>
+        <g stroke="currentColor" stroke-width="13" stroke-linecap="round">
+          <path d="M50 124 C 74 118, 96 98, 108 56"/>
+          <path d="M72 138 C 96 130, 118 108, 130 70"/>
+          <path d="M94 150 C 118 140, 138 120, 150 86"/>
+        </g>
+      </svg>
+      <span class="hd__name">한국산업교육학회<em>KSHRD · SINCE 1989</em></span>
+    </span>
+    <nav class="hd__nav" aria-label="주 메뉴">
+      <ul id="gnb"></ul>
+    </nav>
+    <div class="hd__util">
+      <span class="hd__btn">로그인</span>
+      <span class="hd__btn hd__btn--line">입회안내</span>
+      <button class="hd__burger" type="button" data-mmenu data-mmenu-logo="emblem_white.svg" aria-label="전체 메뉴"><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="hd__panel" aria-hidden="true"><div class="hd__panel-in" id="gnbPanel"></div></div>
+</header>
+
+<!-- ===== 중앙 고정 엠블럼 : 인트로 로고 → 시대 나침반 ===== -->
+<div class="core" id="core" aria-hidden="true">
+  <svg class="core__ring" viewBox="0 0 400 400" fill="none">
+    <circle cx="200" cy="200" r="196" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11" stroke-linecap="round"/>
+    <circle cx="200" cy="200" r="180" stroke="currentColor" stroke-width="1" stroke-dasharray="14 34" opacity=".5"/>
+  </svg>
+  <div class="core__logo" id="coreLogo">
+    <div class="core__logo-in">
+      <svg class="core__mark" id="coreMark" viewBox="0 0 200 150" fill="none">
+        <path class="draw" d="M36 112 C 66 104, 94 78, 108 26"/>
+        <path class="draw" d="M62 128 C 92 118, 120 92, 134 44"/>
+        <path class="draw" d="M88 142 C 118 130, 144 106, 158 64"/>
+      </svg>
+      <strong class="core__abbr" id="coreAbbr">KSHRD</strong>
+      <span class="core__since" id="coreSince">SINCE 1989</span>
+      <span class="core__num" id="coreNum">37</span>
+    </div>
+  </div>
+  <div class="core__era" id="coreEra">
+    <svg class="core__prog" viewBox="0 0 300 300" fill="none"><circle id="coreProg" cx="150" cy="150" r="147"/></svg>
+    <div class="core__needle" id="coreNeedle"><i></i></div>
+    <div class="core__era-txt" id="coreEraTxt"><strong></strong><span></span><span></span></div>
+  </div>
+</div>
+
+<main>
+  <!-- ===== 1. 히어로 ===== -->
+  <section class="s1" id="s1" data-theme="light">
+    <div class="s1__bg"></div>
+    <div class="s1__in">
+      <div class="s1__year"><span>1989</span><i></i><span>2026</span></div>
+      <div class="s1__slogan">
+        <h2 class="s1__left">
+          <span class="ln"><span>일터의</span></span>
+          <span class="ln"><span>배움을 묻다</span></span>
+        </h2>
+        <h2 class="s1__right">
+          <span class="ln"><span>사람의</span></span>
+          <span class="ln"><span>내일을 잇다</span></span>
+        </h2>
+      </div>
+      <p class="s1__lead">한국산업교육학회 37년 — 산·학·관·연이 함께 써 온 인적자원개발의 기록</p>
+    </div>
+    <span class="s1__scroll"><i></i>스크롤을 내려주세요</span>
+  </section>
+
+  <!-- ===== 2. KSHRD 37년 : 4개 시대 ===== -->
+  <section class="s2" id="s2" data-theme="dark">
+    <div class="s2__bg" id="s2bg">
+      <i class="on" style="background-image:url(../_assets/img/era1_lamp.jpg)"></i>
+      <i data-src="../_assets/img/era2_sea.jpg"></i>
+      <i data-src="../_assets/img/era3_horizon.jpg"></i>
+      <i data-src="../_assets/img/era4_light.jpg"></i>
+      <canvas id="gl"></canvas>
+      <span class="s2__shade"></span>
+    </div>
+    <div class="s2__in" id="eras"></div>
+    <span class="s2__pill" id="s2pill">연혁 자세히 보기 <i class="arr"></i></span>
+  </section>
+
+  <div class="after">
+    <!-- ===== 3. 학술대회 주제로 읽는 37년 ===== -->
+    <section class="s3" id="s3" data-theme="light">
+      <div class="tit">
+        <span>KSHRD 아카이브</span>
+        <h3>주제로 읽는 <b>37</b>년</h3>
+        <p>1997년부터 해마다 학술대회가 내건 주제로 한국 HRD의 흐름을 읽습니다</p>
+      </div>
+      <div class="arc" id="arc">
+        <div class="arc__track" id="arcTrack"></div>
+      </div>
+      <span class="btn-pill btn-pill--dark">학술대회 주제 전체 보기 <i class="arr"></i></span>
+
+      <div class="cards">
+        <article class="card card--img" style="--bg:url(../_assets/img/sm/p_journals.jpg)">
+          <span class="card__k">학술지</span>
+          <strong>「산업교육연구」<br>제46권</strong>
+          <p>연 3회 발간 · ISSN 2093-3444</p>
+          <span class="card__go"><i class="arr"></i></span>
+        </article>
+        <article class="card card--navy">
+          <span class="card__k">현장포럼</span>
+          <strong>산업교육<br>현장포럼</strong>
+          <p>기업 연수원을 찾아가 사례를 듣습니다</p>
+          <em class="card__big" data-count="22">22<small>회</small></em>
+          <span class="card__go"><i class="arr"></i></span>
+        </article>
+        <article class="card card--blue">
+          <span class="card__k">산·학 협력</span>
+          <strong>산·학<br>공동회장제</strong>
+          <p>2007년부터 기업 임원과 대학 교수가 함께 이끕니다</p>
+          <svg class="card__rings" viewBox="0 0 260 180" fill="none"><circle cx="92" cy="90" r="78"/><circle cx="168" cy="90" r="78"/></svg>
+          <span class="card__go"><i class="arr"></i></span>
+        </article>
+        <article class="card card--img card--next" style="--bg:url(../_assets/img/sm/p_stage.jpg)">
+          <span class="card__k">다음 행사</span>
+          <strong id="nextKind"></strong>
+          <p id="nextInfo"></p>
+          <span class="card__go"><i class="arr"></i></span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 4. 학회가 던져온 질문들 ===== -->
+    <section class="s4" id="s4" data-theme="light">
+      <div class="tit2">
+        <h4>학회가 던져온 질문들</h4>
+        <p>정기·연합 학술대회 주제 1997 — 2026</p>
+      </div>
+      <div class="wall" id="wall"></div>
+      <span class="btn-pill btn-pill--dark">전체보기 <i class="arr"></i></span>
+    </section>
+
+    <!-- ===== 푸터 ===== -->
+    <footer class="ft">
+      <div class="ft__in">
+        <div class="ft__brand">
+          <img src="../_assets/brand/emblem.svg" alt="" width="64" height="64">
+          <div><strong>한국산업교육학회</strong><span>The Korean Society for Human Resource Development</span></div>
+        </div>
+        <address class="ft__info" id="ftInfo"></address>
+        <button class="ft__top" type="button" id="toTop">맨 위로 <i class="arr arr--up"></i></button>
+      </div>
+      <p class="ft__copy">© 2026 The Korean Society for Human Resource Development. <span>리뉴얼 시안 1 · 사진은 시연용 생성 이미지입니다.</span></p>
+    </footer>
+  </div>
+</main>
+
+<script src="../_lib/data.js"></script>
+<script src="../_lib/gsap.min.js"></script>
+<script src="../_lib/ScrollTrigger.min.js"></script>
+<script src="../_lib/lenis.min.js"></script>
+<script src="../_lib/three.min.js"></script>
+<script src="main.js"></script>
+<script src="../_lib/mobile.js"></script>
+</body>
+</html>

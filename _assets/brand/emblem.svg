@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- 데모용 임시 휘장: 현 사이트 로고는 저해상도(276x53)뿐이라 원형 구성(영문명 링 + since 1989)만 따와 새로 그렸다. -->
+  <defs>
+    <path id="ringTop" d="M 32.45,139 A 78,78 0 1,1 167.55,139"/>
+    <path id="ringBot" d="M 100,100 m -84,0 a 84,84 0 0,0 168,0"/>
+  </defs>
+  <circle cx="100" cy="100" r="97" stroke="currentColor" stroke-width="1.2"/>
+  <circle cx="100" cy="100" r="62" stroke="currentColor" stroke-width="1.2"/>
+  <text font-family="Inter, Pretendard, Arial, sans-serif" font-size="8.4" font-weight="600" letter-spacing="1.5" fill="currentColor">
+    <textPath href="#ringTop" startOffset="50%" text-anchor="middle">THE KOREAN SOCIETY FOR HUMAN RESOURCE DEVELOPMENT</textPath>
+  </text>
+  <text font-family="Inter, Pretendard, Arial, sans-serif" font-size="9.6" font-weight="600" letter-spacing="4" fill="currentColor">
+    <textPath href="#ringBot" startOffset="50%" text-anchor="middle">SINCE 1989</textPath>
+  </text>
+  <!-- 세 줄기 곡선: 산·학·연이 한 방향으로 -->
+  <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+    <path d="M66 122 C 84 118, 100 104, 110 74"/>
+    <path d="M80 130 C 98 124, 114 108, 124 82"/>
+    <path d="M94 138 C 112 130, 128 114, 138 92"/>
+  </g>
+</svg>
